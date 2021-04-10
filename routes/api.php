@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProdutoController;
 use App\Http\Controllers\TipoController;
 use App\Http\Controllers\EstadosController;
+use App\Http\Controllers\ModeloProdutoController;
 
 /*
 |--------------------------------------------------------------------------
@@ -32,6 +33,12 @@ Route::delete('/deletartipo', [TipoController::class, 'deletarTipo']);
 Route::put('/atualizartipo', [TipoController::class, 'atualizarTipo']);
 Route::post('/salvartipo', [TipoController::class, 'salvarTipo']);
 Route::get('/buscartipo', [TipoController::class, 'index']);
+
+//Modelo do produto
+Route::delete('/deletarmodelo', [ModeloProdutoController::class, 'deletarModelo']);
+Route::put('/atualizarmodelo', [ModeloProdutoController::class, 'atualizarModelo']);
+Route::post('/salvarmodelo', [ModeloProdutoController::class, 'salvarModelo']);
+Route::get('/buscarmodelo', [ModeloProdutoController::class, 'index']);
 
 //Busca Estados
 Route::get('/inserirestados', [EstadosController::class, 'salvarEstados']);
