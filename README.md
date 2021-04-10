@@ -1,62 +1,42 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
+# Documentação API PAX <h1>
+### API para cadastro e controle de produtos e consumo do serviço de busca de estados api IBGE.
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+* Xampp ou Laragon
+* Laravel 8
+* PHP 7.~
+* Mysql -> Criar uma base: pax_db
+* Composer
 
-## About Laravel
+1. composer update | composer install
+2. php artisan serve
+3. php artisan migrate
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+### UnitTest:
+Rodar: ./vendor/bin/phpunit
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+### Endpoints:
 
-## Learning Laravel
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1500 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+Tipo
+1. Buscar todos os tipos: http://127.0.0.1:8000/api/buscartipo
+2. Salvar Tipo: http://127.0.0.1:8000/api/salvartipo?tipo=Alimentação
+3. Atualizar Tipo: http://127.0.0.1:8000/api/atualizartipo?id=1&tipo=Limpeza
+4. Deletar Tipo: http://127.0.0.1:8000/api/deletartipo?id=1
 
-## Laravel Sponsors
+Modelo do Produto
+5. Buscar todos os modelos de produto: http://127.0.0.1:8000/api/buscarmodelo
+6. Salvar modelo de produto: http://127.0.0.1:8000/api/salvarmodelo?produto=Sabão Liquido
+7. Atualizar modelo de produto: http://127.0.0.1:8000/api/atualizarmodelo?id=4&produto=Teste
+8. Deletar modelo de produto: http://127.0.0.1:8000/api/deletarmodelo?id=4
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+Produto
+9. Buscar todos os produtos: http://127.0.0.1:8000/api/buscarproduto
+10. Salvar Produto: http://127.0.0.1:8000/api/salvarproduto?id_produto=1&id_tipo=1&quantidade=15
+11. Atualizar Produto: http://127.0.0.1:8000/api/atualizarproduto?id=1&produto=Sabão em Pó&id_tipo=1&quantidade=3
+12. Deletar Produto: http://127.0.0.1:8000/api/deletarproduto?id=2
 
-### Premium Partners
-
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/)**
-- **[OP.GG](https://op.gg)**
-
-## Contributing
-
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
-
-## Code of Conduct
-
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+Integração Estados
+15. Buscar estados: http://127.0.0.1:8000/api/buscarestados
+16. Salvar estados: http://127.0.0.1:8000/api/inserirestados
