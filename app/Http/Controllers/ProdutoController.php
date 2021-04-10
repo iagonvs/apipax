@@ -44,9 +44,9 @@ class ProdutoController extends Controller
 
         $produto = $this->produto::find($request->id);
 
-        $produto->produto = $produto;
-        $produto->id_tipo = $tipo;
-        $produto->quantidade = $quantidade;
+        $produto->produto = $request->produto;
+        $produto->id_tipo = $request->id_tipo;
+        $produto->quantidade = $request->quantidade;
         $produto->save();
 
 
